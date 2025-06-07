@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkomxf7hmt0pg"]
+[gd_scene load_steps=8 format=3 uid="uid://dkomxf7hmt0pg"]
 
 [ext_resource type="Script" uid="uid://iucilqlqglno" path="res://scenes/world/world.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cj2xitp23uywj" path="res://scenes/orbit_camera/OrbitCamera.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://1ltc5df2fvlh" path="res://assets/drawer.blend" id="3_1fp7r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sl2e5"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -29,4 +30,7 @@ transform = Transform3D(0.830865, 0.341271, -0.439543, 0.0686161, 0.721013, 0.68
 [node name="OrbitCamera" parent="." instance=ExtResource("1_ig7tw")]
 
 [node name="Cube" type="CSGMesh3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="drawer" parent="." instance=ExtResource("3_1fp7r")]
