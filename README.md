@@ -7,4 +7,7 @@
 
   sami bag pula bai
   va pup
+
+  mai davan plm bai astia
+  
   
