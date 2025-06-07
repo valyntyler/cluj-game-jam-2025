@@ -32,8 +32,8 @@ func _process(delta: float) -> void:
 	
 func _move(delta: float) -> void:
 	
-	_rotation.x += (-1 if INVERT_MOUSE else 1) * _move_speed.y * delta * ROTATE_SPEED;
-	_rotation.y += (-1 if INVERT_MOUSE else 1) * _move_speed.x * delta * ROTATE_SPEED;
+	_rotation.x += (1 if INVERT_MOUSE else -1) * _move_speed.y * delta * ROTATE_SPEED;
+	_rotation.y += (1 if INVERT_MOUSE else -1) * _move_speed.x * delta * ROTATE_SPEED;
 	if _rotation.x < -PI / 2:
 		_rotation.x = -PI / 2;
 	if _rotation.x > PI / 2:
