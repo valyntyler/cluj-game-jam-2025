@@ -2,7 +2,4 @@
 
 ## Resources
 
-- Trello:
-  [https://trello.com/b/MMqGwEbk/rgda-cluj-game-jam-2025](https://trello.com/b/MMqGwEbk/rgda-cluj-game-jam-2025)
-
-  hhhh
+- [Trello](https://trello.com/b/MMqGwEbk/rgda-cluj-game-jam-2025)
