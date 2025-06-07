@@ -7,6 +7,8 @@ extends Node3D
 @export var CAMERA_NODE_PATH: NodePath;
 @export var MOUSE_ZOOM_SPEED: float = 10;
 @export var INVERT_MOUSE: bool = false;
+@export var MIN_DISTANCE: float = 20;
+@export var MAX_DISTANCE: float = 200;
 
 var _move_speed: Vector2;
 var _scroll_speed: float;
@@ -63,6 +65,16 @@ func _process_mouse_motion_event(event) -> void:
 
 func _process_mouse_scroll_event(event: InputEventMouseButton) -> void:
 	if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-		_scroll_speed = -1 * SCROLL_SPEED;
+		_scroll_speed = -1 * SCROLL_SPEED * _distance_falloff(_distance, MIN_DISTANCE, MAX_DISTANCE);
 	elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-		_scroll_speed = 1 * SCROLL_SPEED;
+		_scroll_speed = 1 * SCROLL_SPEED * _distance_falloff(_distance, MIN_DISTANCE, MAX_DISTANCE);
+
+func _distance_falloff(distance: float, min_distance: float, max_distance: float) -> float:
+	var falloff_factor: float = 1.0;
+	if distance <= min_distance:
+		return 1.0;
+	elif distance >= max_distance:
+		return 0.0;
+	else:
+		falloff_factor = log((distance - min_distance) / (max_distance - min_distance));
+		return clamp(falloff_factor, 0, 1);
