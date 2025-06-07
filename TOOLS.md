@@ -1,12 +1,24 @@
 # Tools
 
+## Engine
+
 - Godot Engine
-- Trello
-- Git
+
+## Graphics
+
 - Blender
+- Figma
+- GIMP
+- MediBang
+- Vegas
+
+## Sounds
+
 - FL Studio
 - Reaper
-- Figma
-- MediBang
-- GIMP
-- Vegas
+- SFXR
+
+## Misc.
+
+- Trello
+- Git
