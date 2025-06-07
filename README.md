@@ -5,6 +5,4 @@
 - Trello:
   [https://trello.com/b/MMqGwEbk/rgda-cluj-game-jam-2025](https://trello.com/b/MMqGwEbk/rgda-cluj-game-jam-2025)
 
-  sami bag pula bai
-  va pup
-  
+  hhhh
