@@ -53,8 +53,16 @@ func _move(delta: float) -> void:
 func _input(event):
 	if event is InputEventMouseMotion:
 		_process_mouse_motion_event(event);
+	if event is InputEventMouseButton:
+		_process_mouse_scroll_event(event);
 	
 		
 func _process_mouse_motion_event(event) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		_move_speed = event.relative;
+
+func _process_mouse_scroll_event(event: InputEventMouseButton) -> void:
+	if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+		_scroll_speed = -1 * SCROLL_SPEED;
+	elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+		_scroll_speed = 1 * SCROLL_SPEED;
