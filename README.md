@@ -24,6 +24,7 @@
 
 - Trello
 - Git
+- un penis imens...
 
 ## Resources
 
