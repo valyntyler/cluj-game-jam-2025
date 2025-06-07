@@ -7,8 +7,8 @@ extends Node3D
 @export var CAMERA_NODE_PATH: NodePath;
 @export var MOUSE_ZOOM_SPEED: float = 10;
 @export var INVERT_MOUSE: bool = false;
-@export var MIN_DISTANCE: float = 20;
-@export var MAX_DISTANCE: float = 200;
+@export var MIN_DISTANCE: float = 2.5;
+@export var MAX_DISTANCE: float = 50;
 
 var _move_speed: Vector2;
 var _scroll_speed: float;
@@ -66,15 +66,24 @@ func _process_mouse_motion_event(event) -> void:
 func _process_mouse_scroll_event(event: InputEventMouseButton) -> void:
 	if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 		_scroll_speed = -1 * SCROLL_SPEED * _distance_falloff(_distance, MIN_DISTANCE, MAX_DISTANCE);
+		if _distance < MIN_DISTANCE:
+			_scroll_speed = 0.0;
 	elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-		_scroll_speed = 1 * SCROLL_SPEED * _distance_falloff(_distance, MIN_DISTANCE, MAX_DISTANCE);
+		_scroll_speed = 1 * SCROLL_SPEED * _distance_falloff(_distance, MAX_DISTANCE, MIN_DISTANCE);
 
 func _distance_falloff(distance: float, min_distance: float, max_distance: float) -> float:
-	var falloff_factor: float = 1.0;
 	if distance <= min_distance:
 		return 1.0;
 	elif distance >= max_distance:
 		return 0.0;
 	else:
-		falloff_factor = log((distance - min_distance) / (max_distance - min_distance));
-		return clamp(falloff_factor, 0, 1);
+		#var normalized_min_distance: float = (distance - min_distance) / (max_distance - min_distance);
+		#var normalized_max_distance: float = (max_distance - distance) / (max_distance - min_distance);
+		#
+		#var falloff_from_min: float = log(normalized_min_distance);
+		#var falloff_from_max: float = log(normalized_max_distance);
+		#
+		#var combined_falloff = min(falloff_from_min, falloff_from_max);
+		#
+		#return clamp(combined_falloff, 0.0, 1.0);
+		return min(log(-distance + max_distance), log(distance - min_distance));
