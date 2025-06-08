@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm3rfdfkckq1e"]
+
+[ext_resource type="Texture2D" uid="uid://ct7wfsg6putkl" path="res://assets/images/room/bed/bed.png" id="1_c32mu"]
+[ext_resource type="Script" uid="uid://dmd68i8n6186f" path="res://scenes/furniture/bed.gd" id="2_2rykw"]
+[ext_resource type="AudioStream" uid="uid://wjkex38v3iv3" path="res://assets/sounds/sheets.wav" id="3_jeert"]
+
+[node name="Bed" type="Sprite2D"]
+texture = ExtResource("1_c32mu")
+script = ExtResource("2_2rykw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jeert")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-333, 185, -99, 330, 34, 255, 36, 146, 9, 156, -185, 54, -188, -41, -323, 17)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
