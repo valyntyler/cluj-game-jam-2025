@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://dau8v3txfa5bt"]
+
+[ext_resource type="Script" uid="uid://5tyfhy8djuex" path="res://scenes/furniture/furniture.gd" id="1_3efq7"]
+[ext_resource type="AudioStream" uid="uid://bj8w7udpcdb66" path="res://assets/sounds/wrdrb_open.wav" id="1_odjnb"]
+[ext_resource type="AudioStream" uid="uid://dn2xt216ey2od" path="res://assets/sounds/wrdrb_close.wav" id="2_3efq7"]
+[ext_resource type="Script" uid="uid://ksxn0sho6beq" path="res://scripts/modal_sprite/modal_sprite.gd" id="3_ycl3n"]
+[ext_resource type="Texture2D" uid="uid://by00gkk0chv3q" path="res://assets/images/room/closet/closet-open.png" id="4_odjnb"]
+[ext_resource type="Texture2D" uid="uid://brm1oym141q2t" path="res://assets/images/room/closet/closet.png" id="5_3efq7"]
+
+[node name="Closet" type="Node2D"]
+script = ExtResource("1_3efq7")
+
+[node name="OpenSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_odjnb")
+
+[node name="CloseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3efq7")
+
+[node name="ModalSprite" type="Node2D" parent="."]
+script = ExtResource("3_ycl3n")
+on_state = ExtResource("4_odjnb")
+off_state = ExtResource("5_3efq7")
+metadata/_custom_type_script = "uid://ksxn0sho6beq"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(73, 80, -46, -1, -54, -202, -5, -234, 114, -169, 119, 48)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

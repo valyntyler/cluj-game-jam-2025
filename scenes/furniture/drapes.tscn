@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddd8p5vv3nmq5"]
+
+[ext_resource type="Script" uid="uid://ksxn0sho6beq" path="res://scripts/modal_sprite/modal_sprite.gd" id="1_26hbf"]
+[ext_resource type="Script" uid="uid://5tyfhy8djuex" path="res://scenes/furniture/furniture.gd" id="1_yc8cc"]
+[ext_resource type="AudioStream" uid="uid://0pcqu2f7s5sd" path="res://assets/sounds/drapes_open.wav" id="2_jhjrp"]
+[ext_resource type="AudioStream" uid="uid://dau773shs5x3r" path="res://assets/sounds/drapes_close.wav" id="3_fssl5"]
+[ext_resource type="Texture2D" uid="uid://dnjlbml3uc3ig" path="res://assets/images/room/curtains/curtains-open.png" id="5_sq5ab"]
+[ext_resource type="Texture2D" uid="uid://buewoasnkojt1" path="res://assets/images/room/curtains/curtains.png" id="6_m67on"]
+
+[node name="Drapes" type="Node2D"]
+script = ExtResource("1_yc8cc")
+
+[node name="OpenSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jhjrp")
+
+[node name="CloseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fssl5")
+
+[node name="ModalSprite" type="Node2D" parent="."]
+script = ExtResource("1_26hbf")
+on_state = ExtResource("5_sq5ab")
+off_state = ExtResource("6_m67on")
+metadata/_custom_type_script = "uid://ksxn0sho6beq"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(211, 63, 209, -126, 310, -70, 306, 110)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
