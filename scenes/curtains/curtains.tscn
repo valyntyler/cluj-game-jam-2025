@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://2g0ew5o8g0uw"]
+
+[ext_resource type="Script" uid="uid://caduf4knmxhf6" path="res://scenes/closet/closet.gd" id="1_d87cf"]
+[ext_resource type="Script" uid="uid://ksxn0sho6beq" path="res://scripts/modal_sprite/modal_sprite.gd" id="2_8kvq8"]
+[ext_resource type="Texture2D" uid="uid://buewoasnkojt1" path="res://assets/images/room/curtains/curtains.png" id="3_u5g51"]
+[ext_resource type="Texture2D" uid="uid://dnjlbml3uc3ig" path="res://assets/images/room/curtains/curtains-open.png" id="4_6e15k"]
+
+[node name="Curtains" type="Node2D"]
+script = ExtResource("1_d87cf")
+
+[node name="ModalSprite" type="Node2D" parent="."]
+script = ExtResource("2_8kvq8")
+off_state = ExtResource("3_u5g51")
+on_state = ExtResource("4_6e15k")
+metadata/_custom_type_script = "uid://ksxn0sho6beq"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(87, 80)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(126, -9, 126, -201, 221, -150, 218, 29)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

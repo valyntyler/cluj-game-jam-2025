@@ -1,58 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqghx2qax784d"]
+[gd_scene load_steps=5 format=3 uid="uid://dqghx2qax784d"]
 
 [ext_resource type="Texture2D" uid="uid://dih2d7edi146w" path="res://assets/images/room/room.png" id="1_w7vtx"]
-[ext_resource type="Texture2D" uid="uid://buewoasnkojt1" path="res://assets/images/room/curtains/curtains.png" id="2_gui0a"]
-[ext_resource type="Texture2D" uid="uid://dnjlbml3uc3ig" path="res://assets/images/room/curtains/curtains-open.png" id="3_7jj40"]
-[ext_resource type="Script" uid="uid://ksxn0sho6beq" path="res://scripts/modal_sprite/modal_sprite.gd" id="3_gui0a"]
-[ext_resource type="Texture2D" uid="uid://brm1oym141q2t" path="res://assets/images/room/closet/closet.png" id="4_gui0a"]
-[ext_resource type="Texture2D" uid="uid://by00gkk0chv3q" path="res://assets/images/room/closet/closet-open.png" id="5_7jj40"]
-[ext_resource type="Script" uid="uid://caduf4knmxhf6" path="res://scenes/room/toggle_object.gd" id="6_7jj40"]
+[ext_resource type="PackedScene" uid="uid://2g0ew5o8g0uw" path="res://scenes/curtains/curtains.tscn" id="3_vaubn"]
+[ext_resource type="PackedScene" uid="uid://b0lusbanxc0jo" path="res://scenes/closet/closet.tscn" id="4_1w8vm"]
 [ext_resource type="Texture2D" uid="uid://ct7wfsg6putkl" path="res://assets/images/room/bed/bed.png" id="6_ip1yl"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gui0a"]
-size = Vector2(207, 316)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jj40"]
-size = Vector2(87.75, 227)
 
 [node name="Room" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_w7vtx")
 
-[node name="Bed" type="Sprite2D" parent="."]
+[node name="Furniture" type="Node2D" parent="."]
+
+[node name="Bed" type="Sprite2D" parent="Furniture"]
 texture = ExtResource("6_ip1yl")
 
-[node name="Closet" type="Node2D" parent="."]
-script = ExtResource("6_7jj40")
+[node name="Curtains" parent="Furniture" instance=ExtResource("3_vaubn")]
 
-[node name="ModalSprite" type="Node2D" parent="Closet"]
-script = ExtResource("3_gui0a")
-off_state = ExtResource("4_gui0a")
-on_state = ExtResource("5_7jj40")
-
-[node name="Area2D" type="Area2D" parent="Closet"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Closet/Area2D"]
-position = Vector2(27.5, -73)
-shape = SubResource("RectangleShape2D_gui0a")
-
-[node name="Curtains" type="Node2D" parent="."]
-script = ExtResource("6_7jj40")
-
-[node name="ModalSprite" type="Node2D" parent="Curtains"]
-script = ExtResource("3_gui0a")
-off_state = ExtResource("2_gui0a")
-on_state = ExtResource("3_7jj40")
-
-[node name="Area2D" type="Area2D" parent="Curtains"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Curtains/Area2D"]
-position = Vector2(260.125, -9.5)
-shape = SubResource("RectangleShape2D_7jj40")
+[node name="Closet" parent="Furniture" instance=ExtResource("4_1w8vm")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
-
-[connection signal="input_event" from="Closet/Area2D" to="Closet" method="_on_area_2d_input_event"]
-[connection signal="input_event" from="Curtains/Area2D" to="Curtains" method="_on_area_2d_input_event"]
