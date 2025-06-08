@@ -1,0 +1,27 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqghx2qax784d"]
+
+[ext_resource type="Texture2D" uid="uid://dih2d7edi146w" path="res://assets/images/room/room.png" id="1_w7vtx"]
+[ext_resource type="Texture2D" uid="uid://buewoasnkojt1" path="res://assets/images/room/curtains/curtains.png" id="2_gui0a"]
+[ext_resource type="Texture2D" uid="uid://dnjlbml3uc3ig" path="res://assets/images/room/curtains/curtains-open.png" id="3_7jj40"]
+[ext_resource type="Script" uid="uid://ksxn0sho6beq" path="res://scripts/modal_sprite/modal_sprite.gd" id="3_gui0a"]
+[ext_resource type="Texture2D" uid="uid://brm1oym141q2t" path="res://assets/images/room/closet/closet.png" id="4_gui0a"]
+[ext_resource type="Texture2D" uid="uid://by00gkk0chv3q" path="res://assets/images/room/closet/closet-open.png" id="5_7jj40"]
+[ext_resource type="Texture2D" uid="uid://ct7wfsg6putkl" path="res://assets/images/room/bed/bed.png" id="6_ip1yl"]
+
+[node name="Room" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_w7vtx")
+
+[node name="Bed" type="Sprite2D" parent="."]
+texture = ExtResource("6_ip1yl")
+
+[node name="Closet" type="Node2D" parent="."]
+script = ExtResource("3_gui0a")
+off_state = ExtResource("4_gui0a")
+on_state = ExtResource("5_7jj40")
+
+[node name="Curtains" type="Node2D" parent="."]
+script = ExtResource("3_gui0a")
+off_state = ExtResource("2_gui0a")
+on_state = ExtResource("3_7jj40")
