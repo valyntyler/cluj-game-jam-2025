@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brm1oym141q2t"
-path="res://.godot/imported/wardrobe.png-13e742ee0f55f81eb52752fec2a0f3e4.ctex"
+uid="uid://by00gkk0chv3q"
+path="res://.godot/imported/closet-open.png-5dca323d65caec3036ca174ed153ff34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/room/wardrobe/wardrobe.png"
-dest_files=["res://.godot/imported/wardrobe.png-13e742ee0f55f81eb52752fec2a0f3e4.ctex"]
+source_file="res://assets/images/room/closet/closet-open.png"
+dest_files=["res://.godot/imported/closet-open.png-5dca323d65caec3036ca174ed153ff34.ctex"]
 
 [params]
 
