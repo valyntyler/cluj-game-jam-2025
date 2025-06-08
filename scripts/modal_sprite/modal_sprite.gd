@@ -1,6 +1,6 @@
 @tool
-extends Node2D
 class_name ModalSprite
+extends Node2D
 
 @export var off_state: Texture2D
 @export var on_state: Texture2D
