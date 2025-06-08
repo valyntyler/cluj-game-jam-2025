@@ -2,16 +2,17 @@
 class_name ModalSprite
 extends Node2D
 
-@export var off_state: Texture2D
-@export var on_state: Texture2D
-@export var is_open: bool = false
-
 var sprite: Sprite2D = Sprite2D.new()
+
+@export var on_state: Texture2D
+@export var off_state: Texture2D
+
+@export var open: bool = false:
+	set(value):
+		open = value
+		sprite.texture = on_state if open else off_state
 
 
 func _ready() -> void:
 	add_child(sprite)
-
-
-func _process(_delta: float) -> void:
-	sprite.texture = on_state if is_open else off_state
+	open = false
