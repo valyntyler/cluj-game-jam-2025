@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqghx2qax784d"]
 
-[ext_resource type="Texture2D" uid="uid://dih2d7edi146w" path="res://assets/images/room/room.png" id="1_w7vtx"]
+[ext_resource type="Texture2D" uid="uid://vby2hm5q8wdx" path="res://assets/images/room/walls/walls.png" id="1_vaubn"]
 [ext_resource type="PackedScene" uid="uid://dau8v3txfa5bt" path="res://scenes/furniture/closet.tscn" id="2_y1kpu"]
 [ext_resource type="PackedScene" uid="uid://ddd8p5vv3nmq5" path="res://scenes/furniture/drapes.tscn" id="3_vaubn"]
 [ext_resource type="PackedScene" uid="uid://cm3rfdfkckq1e" path="res://scenes/furniture/bed.tscn" id="4_vaubn"]
@@ -10,11 +10,11 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
 
-[node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("1_w7vtx")
+[node name="Walls" type="Sprite2D" parent="."]
+texture = ExtResource("1_vaubn")
+
+[node name="Bed" parent="." instance=ExtResource("4_vaubn")]
 
 [node name="Closet" parent="." instance=ExtResource("2_y1kpu")]
 
 [node name="Drapes" parent="." instance=ExtResource("3_vaubn")]
-
-[node name="Bed" parent="." instance=ExtResource("4_vaubn")]
