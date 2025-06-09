@@ -10,7 +10,7 @@ extends Camera2D
 
 @export_group("Movement")
 @export var move_speed: float = 0.5
-@export var centering_force: float = 1.0
+@export var centering_force: float = 2.5
 
 @export_group("Bounds")
 @export var center: Vector2:
