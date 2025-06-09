@@ -19,5 +19,6 @@ texture = ExtResource("1_vaubn")
 
 [node name="CameraController2D" type="Camera2D" parent="."]
 script = ExtResource("5_1w8vm")
-bounds = Rect2i(-362, -115, 724, 320)
+center = Vector2(0, 40)
+size = Vector2(750, 320)
 metadata/_custom_type_script = "uid://dafhycvjm3k63"

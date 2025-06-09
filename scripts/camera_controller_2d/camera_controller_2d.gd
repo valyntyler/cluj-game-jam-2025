@@ -2,11 +2,6 @@
 class_name CameraController2D
 extends Camera2D
 
-@export var bounds: Rect2i:
-	set(value):
-		bounds = value
-		queue_redraw()
-
 @export_group("Zooming")
 @export var zoom_sensitivity: float = 0.1
 @export var zoom_smoothing: float = 0.2
@@ -17,13 +12,28 @@ extends Camera2D
 @export var move_speed: float = 0.5
 @export var centering_force: float = 1.0
 
+@export_group("Bounds")
+@export var center: Vector2:
+	set(value):
+		center = value
+		queue_redraw()
+@export var size: Vector2:
+	set(value):
+		size = value
+		queue_redraw()
+
 var zoom_scale: float = 1.0
 var move_delta: Vector2 = Vector2.ZERO
+var last_point: Vector2 = Vector2.ZERO
+
+
+func get_rect() -> Rect2:
+	return Rect2(center - size / 2, size)
 
 
 func _draw():
 	if Engine.is_editor_hint():
-		draw_rect(bounds, Color(0.5, 0.8, 0.8, 1), false)
+		draw_rect(get_rect(), Color(0.5, 0.8, 0.8, 1), false)
 
 
 func _process(delta: float) -> void:
@@ -33,8 +43,11 @@ func _process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_MIDDLE):
 		position -= (move_delta * move_speed) / zoom_scale
 
-	if not bounds.has_point(position):
-		position = position.lerp(Vector2.ZERO, delta * centering_force / zoom_scale)
+	# Geometry2D.segment_intersects_segment()
+
+	position = position.lerp(last_point, delta * centering_force / zoom_scale)
+	if get_rect().has_point(position):
+		last_point = position
 
 	zoom = zoom.lerp(Vector2.ONE * zoom_scale, delta / zoom_smoothing)
 
