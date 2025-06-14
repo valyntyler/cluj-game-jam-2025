@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdoom177vd601"]
+[gd_scene load_steps=7 format=3 uid="uid://bdoom177vd601"]
 
 [ext_resource type="PackedScene" uid="uid://b0vksyvq3ttnj" path="res://assets/models/chess-pieces/knight.blend" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://dtnkrdebtak0v" path="res://scripts/camera_3d.gd" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://dmtn5lqcxh76o" path="res://assets/models/plane.blend" id="3_4wyf3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e5uuo"]
@@ -23,6 +24,7 @@ tonemap_mode = 2
 transform = Transform3D(0.830033, -0.29882, 0.470905, 0, 0.844348, 0.535795, -0.557714, -0.444728, 0.700837, 6.3706, 7.89931, 9.93673)
 projection = 1
 size = 10.0
+script = ExtResource("1_rwgxs")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Rendering"]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
