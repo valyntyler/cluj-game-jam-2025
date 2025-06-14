@@ -18,6 +18,7 @@
           buildInputs = with pkgs; [
             godot
             gdtoolkit_4
+            just
           ];
         };
       }
