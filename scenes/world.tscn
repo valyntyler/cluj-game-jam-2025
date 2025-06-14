@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdoom177vd601"]
+[gd_scene load_steps=6 format=3 uid="uid://bdoom177vd601"]
 
 [ext_resource type="PackedScene" uid="uid://b0vksyvq3ttnj" path="res://assets/models/chess-pieces/knight.blend" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://dmtn5lqcxh76o" path="res://assets/models/plane.blend" id="3_4wyf3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e5uuo"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -16,14 +17,23 @@ tonemap_mode = 2
 
 [node name="World" type="Node3D"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="Rendering" type="Node" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Rendering"]
+transform = Transform3D(0.830033, -0.29882, 0.470905, 0, 0.844348, 0.535795, -0.557714, -0.444728, 0.700837, 6.3706, 7.89931, 9.93673)
+projection = 1
+size = 10.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Rendering"]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Rendering"]
 environment = SubResource("Environment_rwgxs")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.830033, -0.29882, 0.470905, 0, 0.844348, 0.535795, -0.557714, -0.444728, 0.700837, 2.20802, 3.16313, 3.74166)
+[node name="Objects" type="Node" parent="."]
 
-[node name="Knight" parent="." instance=ExtResource("1_nnsk1")]
+[node name="Knight" parent="Objects" instance=ExtResource("1_nnsk1")]
+
+[node name="Plane" parent="Objects" instance=ExtResource("3_4wyf3")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
