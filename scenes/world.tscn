@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdoom177vd601"]
+[gd_scene load_steps=9 format=3 uid="uid://bdoom177vd601"]
 
 [ext_resource type="Script" uid="uid://dtnkrdebtak0v" path="res://scripts/camera_3d.gd" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://b88qji8khj2m1" path="res://scenes/plane.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://wimd7vigdhcg" path="res://scenes/knight.tscn" id="3_k0juu"]
+[ext_resource type="Script" uid="uid://bv0wkmcutusx2" path="res://scripts/knight.gd" id="4_71j4m"]
+[ext_resource type="Script" uid="uid://cwcvuy5l50kjn" path="res://scripts/screen_cast_target.gd" id="4_k0juu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e5uuo"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -38,3 +40,11 @@ environment = SubResource("Environment_rwgxs")
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 
 [node name="Knight" parent="Objects" instance=ExtResource("3_k0juu")]
+script = ExtResource("4_71j4m")
+
+[node name="ScreenCastTarget" type="Node" parent="Objects/Knight"]
+script = ExtResource("4_k0juu")
+metadata/_custom_type_script = "uid://cwcvuy5l50kjn"
+
+[connection signal="mouse_entered" from="Objects/Knight" to="Objects/Knight" method="_on_mouse_entered"]
+[connection signal="_click" from="Objects/Knight/ScreenCastTarget" to="Objects/Knight" method="_on_screen_cast_target__click"]

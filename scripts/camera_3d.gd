@@ -15,5 +15,7 @@ func _process(_delta: float) -> void:
 	var intersection = space_state.intersect_ray(query)
 
 	if not intersection.is_empty():
-		print("relief")
 		DebugDraw3D.draw_sphere(intersection.position, 0.01, Color.RED)
+		for child in intersection.collider.get_children():
+			if child is ScreenCastTarget:
+				child._click.emit()
