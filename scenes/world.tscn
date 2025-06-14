@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdoom177vd601"]
+[gd_scene load_steps=7 format=3 uid="uid://bdoom177vd601"]
 
 [ext_resource type="Script" uid="uid://dtnkrdebtak0v" path="res://scripts/camera_3d.gd" id="1_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://dmtn5lqcxh76o" path="res://assets/models/plane.blend" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://b88qji8khj2m1" path="res://scenes/plane.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://wimd7vigdhcg" path="res://scenes/knight.tscn" id="3_k0juu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e5uuo"]
@@ -15,8 +15,6 @@ sky_material = SubResource("ProceduralSkyMaterial_e5uuo")
 background_mode = 2
 sky = SubResource("Sky_nnsk1")
 tonemap_mode = 2
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4wyf3"]
 
 [node name="World" type="Node3D"]
 
@@ -36,12 +34,7 @@ environment = SubResource("Environment_rwgxs")
 
 [node name="Objects" type="Node" parent="."]
 
-[node name="Plane" parent="Objects" instance=ExtResource("3_4wyf3")]
+[node name="Plane" parent="Objects" instance=ExtResource("2_4wyf3")]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 
 [node name="Knight" parent="Objects" instance=ExtResource("3_k0juu")]
-
-[node name="Floor" type="StaticBody3D" parent="Objects"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Floor"]
-shape = SubResource("WorldBoundaryShape3D_4wyf3")
