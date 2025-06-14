@@ -18,7 +18,9 @@
           buildInputs = with pkgs; [
             godot
             gdtoolkit_4
+            http-server
             just
+            qrrs
           ];
         };
       }
