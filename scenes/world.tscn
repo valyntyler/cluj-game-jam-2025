@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdoom177vd601"]
+[gd_scene load_steps=6 format=3 uid="uid://bdoom177vd601"]
 
-[ext_resource type="Script" path="res://scripts/camera_3d.gd" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://b88qji8khj2m1" path="res://scenes/plane.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://wimd7vigdhcg" path="res://scenes/knight.tscn" id="3_k0juu"]
 
@@ -23,7 +22,6 @@ tonemap_mode = 2
 [node name="Camera3D" type="Camera3D" parent="Rendering"]
 transform = Transform3D(0.830033, -0.29882, 0.470905, 0, 0.844348, 0.535795, -0.557714, -0.444728, 0.700837, 1.12703, 1.93319, 2.13285)
 size = 10.0
-script = ExtResource("1_rwgxs")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Rendering"]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
