@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://231jowxencsg"
-path="res://.godot/imported/bishop.blend-d7b800e84451bd8b8113bae5a6927540.scn"
+uid="uid://ddt1cwug6rj10"
+path="res://.godot/imported/pawn.blend-852e8242e5bb7bc562cf0004d1e5c9bc.scn"
 
 [deps]
 
-source_file="res://assets/models/chess-pieces/bishop.blend"
-dest_files=["res://.godot/imported/bishop.blend-d7b800e84451bd8b8113bae5a6927540.scn"]
+source_file="res://assets/models/chess/pieces/pawn.blend"
+dest_files=["res://.godot/imported/pawn.blend-852e8242e5bb7bc562cf0004d1e5c9bc.scn"]
 
 [params]
 
