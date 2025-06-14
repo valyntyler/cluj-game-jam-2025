@@ -1,6 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b88qji8khj2m1"]
+[gd_scene load_steps=8 format=3 uid="uid://b88qji8khj2m1"]
 
+[ext_resource type="Texture2D" uid="uid://c786w5vodjl3v" path="res://assets/textures/prototype/texture_07.png" id="1_206p1"]
 [ext_resource type="Texture2D" uid="uid://deakupbl6n0na" path="res://assets/textures/tex_DebugUVTiles.png" id="1_dt3pm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_md2q8"]
+albedo_texture = ExtResource("1_206p1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vp4bi"]
 resource_name = "Material.001"
@@ -45,6 +49,7 @@ data = PackedVector3Array(-1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0
 [node name="Plane" type="StaticBody3D"]
 
 [node name="Plane" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_md2q8")
 mesh = SubResource("ArrayMesh_n2af8")
 skeleton = NodePath("")
 
