@@ -27,7 +27,14 @@
 		{"id":"f177c37fdf6a2c8b","type":"file","file":"assets/mood-board/other-stuff/Pasted image 20250614193701.png","x":-1440,"y":-960,"width":400,"height":400},
 		{"id":"2a74e0742cfa819f","type":"file","file":"assets/mood-board/other-stuff/Pasted image 20250614193823.png","x":-980,"y":-1053,"width":400,"height":300},
 		{"id":"2dd9cd1d271396e9","type":"file","file":"assets/mood-board/other-stuff/Pasted image 20250614193651.png","x":-1040,"y":-1528,"width":400,"height":400},
-		{"id":"679781509a01a2be","type":"file","file":"assets/mood-board/other-stuff/Pasted image 20250614193627.png","x":-1480,"y":-1241,"width":400,"height":225}
+		{"id":"679781509a01a2be","type":"file","file":"assets/mood-board/other-stuff/Pasted image 20250614193627.png","x":-1480,"y":-1241,"width":400,"height":225},
+		{"id":"b92056d66b6e9a1f","type":"file","file":"assets/mood-board/other-stuff/Pasted image 20250615152617.png","x":-580,"y":-1882,"width":400,"height":400},
+		{"id":"6c2891ef7da5bac2","x":-1020,"y":-1882,"width":400,"height":300,"type":"file","file":"assets/mood-board/other-stuff/Pasted image 20250615152637.png"},
+		{"id":"8b8b01e76a08feb2","x":-1480,"y":-1748,"width":400,"height":400,"type":"file","file":"assets/mood-board/other-stuff/Pasted image 20250615152655.png"},
+		{"id":"71138a9103a6f1ea","x":-1960,"y":-1426,"width":400,"height":229,"type":"file","file":"assets/mood-board/other-stuff/Pasted image 20250615152729.png"},
+		{"id":"c76231e0486d643b","x":-1960,"y":-1748,"width":400,"height":266,"type":"file","file":"assets/mood-board/other-stuff/Pasted image 20250615152742.png"},
+		{"id":"6d3ded0ece5bfb36","x":-1480,"y":-2200,"width":400,"height":400,"type":"file","file":"assets/mood-board/other-stuff/Pasted image 20250615152752.png"},
+		{"id":"e13af8894120a2c0","x":-1960,"y":-2067,"width":400,"height":267,"type":"file","file":"assets/mood-board/other-stuff/Pasted image 20250615152842.png"}
 	],
 	"edges":[]
 }
