@@ -9,13 +9,15 @@ show URL:
   @ echo {{URL}}
 
 build VERSION:
+  @ rm -r ./builds/{{VERSION}}
   @ mkdir ./builds/{{VERSION}}
   @ godot --headless --export-release Web ./builds/{{VERSION}}/index.html
-
-serve VERSION:
-  @ just show "http://{{ip}}"
-  @ http-server ./builds/{{VERSION}}
 
 deploy VERSION:
   @ scp -r ./builds/{{VERSION}} pi@ssh.valyntyler.com:~/Projects/demo
   @ ssh pi@ssh.valyntyler.com "sudo systemctl restart game-demo.service"
+
+debug:
+  @ just build debug
+  @ just deploy debug
+  @ just show "http://demo.valyntyler.com/{{VERSION}}"
