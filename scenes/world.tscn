@@ -17,6 +17,7 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qfnet"]
 shader = ExtResource("5_71j4m")
+shader_parameter/offset = 1.0
 
 [node name="World" type="Node3D"]
 metadata/_edit_group_ = true
