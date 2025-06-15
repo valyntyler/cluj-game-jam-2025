@@ -12,3 +12,7 @@ serve VERSION:
   @ qrrs "http://{{ip}}" -m 1
   @ echo "http://{{ip}}"
   @ http-server ./builds/{{VERSION}}
+
+deploy VERSION:
+  @ scp -r ./builds/{{VERSION}} pi@ssh.valyntyler.com:~/Projects/demo
+  @ ssh pi@ssh.valyntyler.com "sudo systemctl restart game-demo.service"
