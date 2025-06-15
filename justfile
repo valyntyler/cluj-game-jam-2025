@@ -11,7 +11,6 @@ show URL:
 
 # build the project
 build DIR:
-  @ rm -r ./builds/{{DIR}}
   @ mkdir ./builds/{{DIR}}
   @ godot --headless --export-release Web ./builds/{{DIR}}/index.html
 
