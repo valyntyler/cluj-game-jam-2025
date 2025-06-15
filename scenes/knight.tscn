@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://wimd7vigdhcg"]
 
-[ext_resource type="Script" uid="uid://bv0wkmcutusx2" path="res://scripts/knight.gd" id="1_dp28g"]
+[ext_resource type="Script" uid="uid://bv0wkmcutusx2" path="res://scripts/unit.gd" id="1_dp28g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_axuxu"]
 resource_local_to_scene = true
