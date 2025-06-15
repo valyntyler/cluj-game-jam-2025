@@ -17,7 +17,7 @@ deploy VERSION:
   @ scp -r ./builds/{{VERSION}} pi@ssh.valyntyler.com:~/Projects/demo
   @ ssh pi@ssh.valyntyler.com "sudo systemctl restart game-demo.service"
 
-debug:
-  @ just build debug
-  @ just deploy debug
+release VERSION="debug":
+  @ just build {{VERSION}}
+  @ just deploy {{VERSION}}
   @ just show "http://demo.valyntyler.com/{{VERSION}}"
