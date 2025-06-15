@@ -1,6 +1,26 @@
-[gd_scene format=3 uid="uid://b5hnbefkpumcr"]
+[gd_scene load_steps=5 format=3 uid="uid://b5hnbefkpumcr"]
 
-[node name="Tile" type="Node3D"]
+[ext_resource type="Script" uid="uid://b8gfaks3msgvg" path="res://scripts/tile.gd" id="1_3dk36"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-size = Vector3(1.8, 0.25, 1.8)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uiyn6"]
+resource_local_to_scene = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_uiyn6"]
+size = Vector2(0.245, 0.245)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uiyn6"]
+size = Vector3(0.246338, 0.01, 0.24585)
+
+[node name="Tile" type="StaticBody3D"]
+script = ExtResource("1_3dk36")
+
+[node name="Tile" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_uiyn6")
+mesh = SubResource("QuadMesh_uiyn6")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000405883, -5.03481e-05, -6.10352e-05)
+shape = SubResource("BoxShape3D_uiyn6")
+debug_color = Color(0.913604, 8.81755e-05, 0.719177, 0.42)
