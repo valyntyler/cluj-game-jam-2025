@@ -4,19 +4,23 @@ ip := `ip route | grep '^default' | awk '{print $9}'`
 list:
   @ just -l
 
+# show the url on screen
 show URL:
   @ qrrs {{URL}} -m 1
   @ echo {{URL}}
 
-build VERSION:
-  @ rm -r ./builds/{{VERSION}}
-  @ mkdir ./builds/{{VERSION}}
-  @ godot --headless --export-release Web ./builds/{{VERSION}}/index.html
+# build the project
+build DIR:
+  @ rm -r ./builds/{{DIR}}
+  @ mkdir ./builds/{{DIR}}
+  @ godot --headless --export-release Web ./builds/{{DIR}}/index.html
 
-deploy VERSION:
-  @ scp -r ./builds/{{VERSION}} pi@ssh.valyntyler.com:~/Projects/demo
+# deploy remotely
+deploy DIR:
+  @ scp -r ./builds/{{DIR}} pi@ssh.valyntyler.com:~/Projects/demo
   @ ssh pi@ssh.valyntyler.com "sudo systemctl restart game-demo.service"
 
+# release a version of the project
 release VERSION="debug":
   @ just build {{VERSION}}
   @ just deploy {{VERSION}}
