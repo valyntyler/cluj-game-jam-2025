@@ -9,9 +9,6 @@ class_name Grid extends Node;
 var _tiles := [];
 var selected: Tile = null;
 
-var _tiles := [];
-var selected: Tile = null;
-
 func _ready() -> void:
 	generate_grid();
 
