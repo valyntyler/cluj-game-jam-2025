@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdoom177vd601"]
+[gd_scene load_steps=10 format=3 uid="uid://bdoom177vd601"]
 
 [ext_resource type="Texture2D" uid="uid://bco1x4gxudgye" path="res://assets/textures/grid.png" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://b0vksyvq3ttnj" path="res://assets/models/chess/knight.blend" id="2_k0juu"]
 [ext_resource type="PackedScene" uid="uid://ddt1cwug6rj10" path="res://assets/models/chess/pawn.blend" id="3_71j4m"]
 [ext_resource type="PackedScene" uid="uid://dp13ju7bdtr3i" path="res://assets/models/chess/rook.blend" id="4_qfnet"]
+[ext_resource type="Shader" uid="uid://d01jtc77c2h2q" path="res://assets/shaders/world.gdshader" id="5_71j4m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwgxs"]
 albedo_texture = ExtResource("1_nnsk1")
@@ -14,7 +15,11 @@ texture_filter = 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k0juu"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qfnet"]
+shader = ExtResource("5_71j4m")
+
 [node name="World" type="Node3D"]
+metadata/_edit_group_ = true
 
 [node name="Rendering" type="Node" parent="."]
 
@@ -48,3 +53,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
 
 [node name="rook" parent="." instance=ExtResource("4_qfnet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_qfnet")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
