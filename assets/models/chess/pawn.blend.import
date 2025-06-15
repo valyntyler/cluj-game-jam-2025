@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d3obq4cl1y3nt"
-path="res://.godot/imported/king.blend-c5c4dc58b6fb9f8c784ec34c1bb820d0.scn"
+uid="uid://ddt1cwug6rj10"
+path="res://.godot/imported/pawn.blend-8a60d18b596b1f5ece1207786ab8bef4.scn"
 
 [deps]
 
-source_file="res://assets/models/chess/pieces/king.blend"
-dest_files=["res://.godot/imported/king.blend-c5c4dc58b6fb9f8c784ec34c1bb820d0.scn"]
+source_file="res://assets/models/chess/pawn.blend"
+dest_files=["res://.godot/imported/pawn.blend-8a60d18b596b1f5ece1207786ab8bef4.scn"]
 
 [params]
 
