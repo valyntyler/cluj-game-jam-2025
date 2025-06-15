@@ -46,7 +46,8 @@ func get_tile(pos: Vector2i) -> Node3D:
 func set_selected(selected: Tile) -> void:
 	for x in GRID_SIZE_X:
 		for z in GRID_SIZE_Z:
-			(_tiles[x][z] as Tile).deselect();
+			if (_tiles[x][z] as Tile) != self:
+				(_tiles[x][z] as Tile).deselect();
 	self.selected = selected;
 	
 	# debug

@@ -3,6 +3,10 @@ class_name Unit extends Clickable
 @onready
 var mesh: MeshInstance3D = get_children().filter(func(c): return c is MeshInstance3D).front()
 
+func _process(delta: float) -> void:
+	if GridManager.get_selected_unit() == self:
+		self.mesh.material_override.albedo_color = Color.GREEN;
+
 func on_mouse_entered() -> void:
 	mesh.material_override.albedo_color = Color.RED
 	hover = true

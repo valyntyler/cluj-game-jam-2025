@@ -9,7 +9,7 @@ var child: Node3D = null;
 func on_mouse_entered() -> void:
 	#mesh.material_override.albedo_color = Color.RED
 	hover = true
-
+ 
 func on_mouse_exited() -> void:
 	#mesh.material_override.albedo_color = Color.WHITE
 	hover = false
@@ -19,8 +19,10 @@ func on_input_event(camera: Node, event: InputEvent, event_position: Vector3, no
 		return
 		
 	if GridManager.has_selected_unit():
-		self.set_child(GridManager.get_selected_unit());
+		self.set_child(GridManager.get_selected_unit()); 
+	if GridManager.get_selected_unit() == self:
 		GridManager.set_selected_unit(null);
+		#GridManager.set_selected_unit(null);
 	#mesh.material_override.albedo_color = Color.GREEN;
 	#var shader_material = ShaderMaterial.new();
 	#shader_material.shader = shader;
