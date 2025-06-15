@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdoom177vd601"]
+[gd_scene load_steps=12 format=3 uid="uid://bdoom177vd601"]
 
 [ext_resource type="Texture2D" uid="uid://bco1x4gxudgye" path="res://assets/textures/grid.png" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://b0vksyvq3ttnj" path="res://assets/models/chess/knight.blend" id="2_k0juu"]
@@ -15,12 +15,17 @@ texture_filter = 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k0juu"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
+[sub_resource type="Gradient" id="Gradient_71j4m"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.345708, 0.512761, 0.730858)
+colors = PackedColorArray(0, 0, 0.0941176, 1, 0, 0, 0.34902, 1, 0, 0.341176, 1, 1, 0, 0.584314, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qfnet"]
+gradient = SubResource("Gradient_71j4m")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qfnet"]
 shader = ExtResource("5_71j4m")
-shader_parameter/offset = 1.0
-shader_parameter/offset_r = Vector2(0, 0)
-shader_parameter/offset_g = Vector2(-1, -1)
-shader_parameter/offset_b = Vector2(1, 1)
+shader_parameter/gradient = SubResource("GradientTexture1D_qfnet")
 
 [node name="World" type="Node3D"]
 metadata/_edit_group_ = true
