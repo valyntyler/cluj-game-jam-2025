@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://csl4vqgvhjym2"]
+[gd_scene load_steps=9 format=4 uid="uid://wao4hhpvs2cw"]
 
-[ext_resource type="Script" uid="uid://bv0wkmcutusx2" path="res://scripts/unit.gd" id="2_hpnfv"]
+[ext_resource type="Script" path="res://scripts/unit.gd" id="1_gmati"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmati"]
 
@@ -57,7 +57,7 @@ _data = {
 }
 
 [node name="Airplane" type="StaticBody3D"]
-script = ExtResource("2_hpnfv")
+script = ExtResource("1_gmati")
 
 [node name="Airplane" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_gmati")
