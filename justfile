@@ -21,7 +21,11 @@ deploy DIR:
   @ ssh pi@ssh.valyntyler.com "sudo systemctl restart game-demo.service"
 
 # release a version of the project
-release VERSION="debug":
+release VERSION:
   @ just build {{VERSION}}
   @ just deploy {{VERSION}}
   @ just show "http://demo.valyntyler.com/{{VERSION}}"
+
+# produce a debug build and deploy it
+refresh:
+  @just release debug
