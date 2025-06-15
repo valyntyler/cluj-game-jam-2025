@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdoom177vd601"]
+[gd_scene load_steps=8 format=3 uid="uid://bdoom177vd601"]
 
 [ext_resource type="Texture2D" uid="uid://bco1x4gxudgye" path="res://assets/textures/grid.png" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://b0vksyvq3ttnj" path="res://assets/models/chess/knight.blend" id="2_k0juu"]
+[ext_resource type="PackedScene" uid="uid://ddt1cwug6rj10" path="res://assets/models/chess/pawn.blend" id="3_71j4m"]
+[ext_resource type="PackedScene" uid="uid://dp13ju7bdtr3i" path="res://assets/models/chess/rook.blend" id="4_qfnet"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwgxs"]
 albedo_texture = ExtResource("1_nnsk1")
@@ -36,3 +39,12 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Floor"]
 shape = SubResource("ConcavePolygonShape3D_k0juu")
+
+[node name="knight" parent="." instance=ExtResource("2_k0juu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="pawn" parent="." instance=ExtResource("3_71j4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="rook" parent="." instance=ExtResource("4_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
